@@ -1,4 +1,3 @@
-import static java.lang.String.*;
 
 public class Conta implements IConta {
     private static final int AGENCIA_PADRAO = 1;
