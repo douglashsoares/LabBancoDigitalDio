@@ -1,23 +1,31 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Banco {
 
-    private String nome;
-    private List<Conta> contas;
+    private final List<Conta> contas;
 
-    public String getNome() {
-        return nome;
+    public Banco() {
+        contas = new ArrayList<>();
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void adicionarConta(Conta conta){
+        contas.add(conta);
     }
 
-    public List<Conta> getContas() {
-        return contas;
+    public String encontrarContaPorNumero(int numeroDoCliente){
+        for(Conta conta: contas){
+            if (conta.getNumero() == numeroDoCliente){
+                return conta.cliente.getNome();
+            }
+        }
+        return null;
     }
 
-    public void setContas(List<Conta> contas) {
-        this.contas = contas;
+    public void mostrarTodasAsContas(){
+        for (Conta conta: contas){
+            System.out.println("Titular: " + conta.cliente.getNome());
+        }
     }
+
 }

@@ -2,8 +2,8 @@ public class ContaCorrente extends Conta {
 
     double limiteChequeEspecial = 500;
 
-    public ContaCorrente(Cliente cliente) {
-        super(cliente);
+    public ContaCorrente(Cliente cliente, double saldoInicial) {
+        super(cliente, saldoInicial);
     }
 
     @Override
