@@ -15,12 +15,20 @@ public class Conta implements IConta {
 
     @Override
     public void sacar(double valor) {
-        saldo -= valor;
+        if (valor > saldo || valor <= 0) {
+            System.out.println("Saldo insuficiente");
+        } else {
+            saldo -= valor;
+        }
     }
 
     @Override
     public void depositar(double valor) {
-        saldo += valor;
+        if (valor > 0) {
+            saldo += valor;
+        } else {
+            System.out.println("Valor menor do que Zero");
+        }
     }
 
     @Override
@@ -51,5 +59,6 @@ public class Conta implements IConta {
         System.out.println(String.format("Agencia: %d", this.agencia));
         System.out.println(String.format("Numero: %d", this.numero));
         System.out.println(String.format("Saldo: %.2f", this.saldo));
+
     }
 }
